@@ -36,6 +36,8 @@ model Trigger {
   zap     Zap @relation(fields: [zapId], references: [id])
 }
 
+
+
 model AvailableTriggers {
   id    String @default(uuid()) @id
   name  String
