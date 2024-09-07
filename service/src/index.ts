@@ -29,6 +29,15 @@ async function main(){
             // todo send email
             await new Promise((resolve) => setTimeout(resolve, 5000));
             console.log("Processing done")
+
+            // const zapRunId = message.value?.toString();
+            // const nextAction = await prisma.actions.get({
+
+            // })
+            // if(nextAction.type === 'email'){
+            //     await sendEmail();
+            // }
+
             // commit the message to kafka
             await consumer.commitOffsets([
                 { 
