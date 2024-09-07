@@ -8,7 +8,7 @@ import jwt from "jsonwebtoken";
 const router = Router();
 
 router.post("/signup", async (req, res) =>{
-    const body = req.body.username;
+    const body = req.body;
     const parsedData = SignupSchema.safeParse(body);
 
     if(!parsedData.success){
@@ -41,7 +41,7 @@ router.post("/signup", async (req, res) =>{
 })
 
 router.post("/signin", async (req, res) =>{
-    const body = req.body.username;
+    const body = req.body;
     const parsedData = SignupSchema.safeParse(body);
 
     if(!parsedData.success){
@@ -71,7 +71,7 @@ router.post("/signin", async (req, res) =>{
     });
 })
 
-router.get("/user", authMiddleware, async (req,res) => {
+router.get("/", authMiddleware, async (req,res) => {
     // todo fix types
     // @ts-ignore
     const id = req.id;
