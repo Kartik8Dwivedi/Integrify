@@ -10,7 +10,7 @@ app.use(cors());
 
 app.use("/api/v1/user", userRouter);
 
-app.use("api/v1/zap", zapRouter);
+app.use("/api/v1/zap", zapRouter);
 
 app.listen(3005, () => {
   console.log("Server is running on port 3005");

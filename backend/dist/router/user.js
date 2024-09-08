@@ -83,6 +83,9 @@ router.get("/", middleware_1.authMiddleware, (req, res) => __awaiter(void 0, voi
             email: true
         }
     });
+    if (!user) {
+        return res.status(404).json({ error: "User not found" });
+    }
     return res.json({ user });
 }));
 exports.userRouter = router;

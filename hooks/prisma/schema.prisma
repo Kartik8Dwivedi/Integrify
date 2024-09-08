@@ -20,6 +20,7 @@ model User {
   password      String
   createdAt     DateTime @default(now())
   updatedAt     DateTime @updatedAt
+  zaps          Zap[]
 }
 
 model Zap {
@@ -28,6 +29,8 @@ model Zap {
   trigger       Trigger?
   actions       Action[]
   zapRuns       ZapRun[]
+  userId        Int
+  user          User     @relation(fields: [userId], references: [id])
 }
 
 model Trigger {
